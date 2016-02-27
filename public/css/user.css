@@ -1,7 +1,11 @@
-.container .stripe-container {
-   height: 10em;
-   position: relative };
-   margin: 0;
-   position: absolute;               /* 2 */
-   top: 50%;                         /* 3 */
-   transform: translate(0, -50%) }   /* 4 */
+.center {
+    height: 10em;
+    position: relative };
+    margin: 0;
+    background: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
