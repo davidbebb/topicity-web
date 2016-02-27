@@ -3,13 +3,16 @@ var router = express.Router();
 
 
 /* GET Userlist page. */
-router.get('/datapoint', function(req, res) {
+router.get('/datapoint/:id', function(req, res) {
     var db = req.db;
-
+    var idNumber = req.params.id;
     db.list(function(err, body){
       var dataLength = body.rows.length;
-      console.log(dataLength);
-      id = body.rows[0].id;
+      if (idNumber >= dataLength) {
+        res.send('Not in range');
+        return;
+      };
+      id = body.rows[idNumber].id;
 
       db.get(id, function(err, body) {
         if (!err) {
