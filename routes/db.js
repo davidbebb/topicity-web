@@ -6,7 +6,7 @@ var router = express.Router();
 router.get('/datapoint', function(req, res) {
     var db = req.db;
 
-    db.list(function(err, body)
+    db.list(function(err, body){
       var dataLength = body.rows.length;
       console.log(dataLength);
       id = body.rows[0].id;
