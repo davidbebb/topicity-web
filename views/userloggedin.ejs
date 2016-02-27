@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/userfs.css">
+
     <link rel="stylesheet" href="js/rs-plugin/css/settings.css">
 
     <script type="text/javascript" src="js/modernizr.custom.32033.js"></script>
@@ -46,7 +48,7 @@
 
     <header>
 
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-default" role="navigation">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -62,26 +64,352 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#about">about</a>
+                            <li><a href="#about">My usage</a>
                             </li>
-                            <li><a href="#features">features</a>
+                            <li><a href="#features">My bills</a>
                             </li>
-                            <li><a href="#reviews">reviews</a>
+                            <li><a href="#reviews">Top up</a>
                             </li>
-                            <li><a href="#screens">screens</a>
+                            <li><a class="getApp" href="#getApp">Log out</a>
                             </li>
-                            <li><a href="#demo">demo</a>
-                            </li>
-                            <li><a class="getApp" href="#getApp">get app</a>
-                            </li>
-                            <li><a href="#support">support</a>
-                            </li>
+
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
                 </div>
                 <!-- /.container-->
         </nav>
+
+    </header>
+
+
+    <div class="wrapper">
+
+
+
+        <section id="about">
+            <div class="container">
+
+                <div class="section-heading scrollpoint sp-effect3">
+                    <h1>About Us</h1>
+                    <div class="divider"></div>
+                    <p>Oleose Beautiful App Landing Page</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="about-item scrollpoint sp-effect2">
+                            <i class="fa fa-download fa-2x"></i>
+                            <h3>Easy setup</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                        <div class="about-item scrollpoint sp-effect5">
+                            <i class="fa fa-mobile fa-2x"></i>
+                            <h3>On-the-go</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                        <div class="about-item scrollpoint sp-effect5">
+                            <i class="fa fa-users fa-2x"></i>
+                            <h3>Social connect</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                        <div class="about-item scrollpoint sp-effect1">
+                            <i class="fa fa-sliders fa-2x"></i>
+                            <h3>Dedicated support</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <div class="section-heading scrollpoint sp-effect3">
+                    <h1>Features</h1>
+                    <div class="divider"></div>
+                    <p>Learn more about this feature packed App</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 scrollpoint sp-effect1">
+                        <div class="media media-left feature">
+                            <a class="pull-right" href="#">
+                                <i class="fa fa-cogs fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">User Settings</h3>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="media media-left feature">
+                            <a class="pull-right" href="#">
+                                <i class="fa fa-envelope fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Messages Inbox</h3>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="media media-left feature">
+                            <a class="pull-right" href="#">
+                                <i class="fa fa-users fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Friends List</h3>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="media media-left feature">
+                            <a class="pull-right" href="#">
+                                <i class="fa fa-comments fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Live Chat Messages</h3>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="media media-left feature">
+                            <a class="pull-right" href="#">
+                                <i class="fa fa-calendar fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Calendar / Planner</h3>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4" >
+                        <img src="img/eco/iphone-eco.png" class="img-responsive scrollpoint sp-effect5" alt="">
+                    </div>
+                    <div class="col-md-4 col-sm-4 scrollpoint sp-effect2">
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-map-marker fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">My Places</h3>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-film fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Media Player™</h3>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-compass fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Intuitive Statistics</h3>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-picture-o fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Weather on-the-go</h3>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="media active feature">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">And much more!</h3>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <div class="container">
+              <!-- Strip boot strap form borrowd from http://bootsnipp.com/snippets/Qxv3m -->
+              <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+              <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+              <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
+
+              <!-- If you're using Stripe for payments -->
+              <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+              <div class="section-heading scrollpoint sp-effect3">
+                  <h1>Features</h1>
+                  <div class="divider"></div>
+                  <p>Learn more about this feature packed App</p>
+              </div>
+
+              <div class="container ">
+                <div class="row">
+                    <!-- You can make it whatever width you want. I'm making it full width
+                         on <= small devices and 4/12 page width on >= medium devices -->
+                    <div class="col-xs-12 col-md-4">
+
+
+                        <!-- CREDIT CARD FORM STARTS HERE -->
+                        <div class="panel panel-default credit-card-box stripe-container">
+                            <div class="panel-heading display-table" >
+                                <div class="row display-tr" >
+                                    <h3 class="panel-title display-td" >Payment Details</h3>
+                                    <div class="display-td" >
+                                        <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" id="payment-form">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="cardNumber">CARD NUMBER</label>
+                                                <div class="input-group">
+                                                    <input
+                                                        type="tel"
+                                                        class="form-control"
+                                                        name="cardNumber"
+                                                        placeholder="Valid Card Number"
+                                                        autocomplete="cc-number"
+                                                        required autofocus
+                                                    />
+                                                    <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-7 col-md-7">
+                                            <div class="form-group">
+                                                <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                                <input
+                                                    type="tel"
+                                                    class="form-control"
+                                                    name="cardExpiry"
+                                                    placeholder="MM / YY"
+                                                    autocomplete="cc-exp"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-5 col-md-5 pull-right">
+                                            <div class="form-group">
+                                                <label for="cardCVC">CV CODE</label>
+                                                <input
+                                                    type="tel"
+                                                    class="form-control"
+                                                    name="cardCVC"
+                                                    placeholder="CVC"
+                                                    autocomplete="cc-csc"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="couponCode">COUPON CODE</label>
+                                                <input type="text" class="form-control" name="couponCode" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button class="btn btn-success btn-lg btn-block" type="submit">Start Subscription</button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="display:none;">
+                                        <div class="col-xs-12">
+                                            <p class="payment-errors"></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- CREDIT CARD FORM ENDS HERE -->
+                    </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section id="screens">
+            <div class="container">
+
+                <div class="section-heading scrollpoint sp-effect3">
+                    <h1>Screens</h1>
+                    <div class="divider"></div>
+                    <p>See what’s included in the App</p>
+                </div>
+
+                <div class="filter scrollpoint sp-effect3">
+                    <a href="javascript:void(0)" class="button js-filter-all active">All Screens</a>
+                    <a href="javascript:void(0)" class="button js-filter-one">User Access</a>
+                    <a href="javascript:void(0)" class="button js-filter-two">Social Network</a>
+                    <a href="javascript:void(0)" class="button js-filter-three">Media Players</a>
+                </div>
+                <div class="slider filtering scrollpoint sp-effect5" >
+                    <div class="one">
+                        <img src="img/eco/screens/profile.jpg" alt="">
+                        <h4>Profile Page</h4>
+                    </div>
+                    <div class="two">
+                        <img src="img/eco/screens/menu.jpg" alt="">
+                        <h4>Toggel Menu</h4>
+                    </div>
+                    <div class="three">
+                        <img src="img/eco/screens/weather.jpg" alt="">
+                        <h4>Weather Forcast</h4>
+                    </div>
+                    <div class="one">
+                        <img src="img/eco/screens/signup.jpg" alt="">
+                        <h4>Sales Analysis</h4>
+                    </div>
+                    <div class="one">
+                        <img src="img/eco/screens/calendar.jpg" alt="">
+                        <h4>Event Calendar</h4>
+                    </div>
+                    <div class="two">
+                        <img src="img/eco/screens/options.jpg" alt="">
+                        <h4>Some Options</h4>
+                    </div>
+                    <div class="three">
+                        <img src="img/eco/screens/sales.jpg" alt="">
+                        <h4>Lorem ipsum dolor</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo">
+            <div class="container">
+                <div class="section-heading scrollpoint sp-effect3">
+                    <h1>Demo</h1>
+                    <div class="divider"></div>
+                    <p>Take a closer look in more detail</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 scrollpoint sp-effect2">
+                        <div class="video-container" >
+                            <iframe src="http://player.vimeo.com/video/70984663"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 
