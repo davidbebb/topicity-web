@@ -92,6 +92,7 @@
           <div class="container">
                 <div class="section-heading scrollpoint sp-effect3">
                     <h1>My electricity</h1>
+                    <h3 id='credit-remain'></h3>
                 </div>
 
                 <div>
@@ -99,19 +100,19 @@
                     <div class="col-md-10 col-sm-10" >
 
                       <h2>24hr</h2>
-                      <p> kW/hr</p>
+                      <p>Credits</p>
                       <canvas id="dayChart" width="1000" height="400"></canvas>
 
                       <br>
 
 
                       <h2>Week</h2>
-                      <p class='rotate'> kW/hr</p>
+                      <p class='rotate'>Credits</p>
                       <canvas id="weekChart" width="1000" height="400"></canvas>
 
                       <br>
                       <h2>Year</h2>
-                      <p class='rotate'> kW/hr</p>
+                      <p class='rotate'>Credits</p>
                       <canvas id="yearChart" width="1000" height="400"></canvas>
 
                     </div>
@@ -259,7 +260,7 @@
                   strokeColor: "rgba(220,220,220,0.8)",
                   highlightFill: "rgba(220,220,220,0.75)",
                   highlightStroke: "rgba(220,220,220,1)",
-                  data: [65, 59, 80, 81, 56, 55, 40, 35, 56, 74, 42, 58]
+                  data: [1445, 1409, 2130, 2121, 1806, 1405, 1060, 1225, 1706, 1384, 1862, 1908]
               },
             ]
         };
@@ -292,6 +293,7 @@
           var dataObj = [];
           l = out.length;
           for (i = 0; i < l; i++) {
+            console.log(out[0]);
             var point = {'x': new Date(out[i][4]), 'y': out[i][3]};
             dataObj.push(point);
           }
@@ -310,7 +312,7 @@
               scaleShowLabels: true,
               scaleBeginAtZero: true,
               scaleType: "date",
-              datasetStroke: false
+              datasetStroke: true
           });
 
           });

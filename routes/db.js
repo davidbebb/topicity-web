@@ -96,8 +96,11 @@ function dataToArray(data){
   var power = res.shift();
   var credit = res.shift();
   l = res.length;
-  foo = res.reduce((a, b) => a + b, 0);
-  bar = foo/l;
+  foo = 0;
+  for(var i = 0; i < l; i++) {
+    foo += parseFloat(res[i]);  // Iterate over your first array and then grab the second element add the values up
+  }
+  bar = foo;
   return [id, power, credit, bar];
 };
 
