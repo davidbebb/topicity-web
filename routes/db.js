@@ -31,6 +31,7 @@ router.get('/data/all', function(req, res) {
           var dataArray = [];
           var gatewayEui =  "1DEE15E85FA7DCEF";
           var length = body.rows.length;
+          console.log(length);
           var data = [];
           body.rows.forEach(function(doc) {
             var id = doc.id;
@@ -45,8 +46,7 @@ router.get('/data/all', function(req, res) {
                   dataArray.forEach(function(doc){
                     data.push(processData(doc.data, doc.time));
                     if (data.length === length){
-                      toSend = split(data);
-                      res.json(toSend);
+                      res.json(data);
                     };
                   });
                 };
@@ -65,7 +65,7 @@ function split(data) {
     timeArray.push(data[i][1]);
   }
 
-  return [dataArray, timeArray];
+  return [timeArray, dataArray];
 }
 
 
@@ -85,16 +85,20 @@ function dynamicSort(property) {
 function processData(data, endTime) {
   res = dataToArray(data);
   time =  new Date(endTime);
-  return [res, time];
+  res.push(time)
+  return res;
 };
 
 function dataToArray(data){
   var buf = new Buffer(data, 'base64').toString("ascii");
   var res = buf.split(",");
-  res.shift();
+  var id = res.shift();
+  var power = res.shift();
+  var credit = res.shift();
   l = res.length;
-  foo = (res.reduce((a, b) => a + b, 0)/l);
-  return foo;
+  foo = res.reduce((a, b) => a + b, 0);
+  bar = foo/l;
+  return [id, power, credit, bar];
 };
 
 function getTimes(time, number) {

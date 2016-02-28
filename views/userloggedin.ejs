@@ -290,16 +290,12 @@
         dataUrl = 'api/data/all';
         $.get( dataUrl, function( out ) {
           var dataObj = [];
-          l = out[0].length;
+          l = out.length;
           for (i = 0; i < l; i++) {
-            var point = {
-              'x': out[1][i],
-              'y': out[0][i]
-            };
-            console.log(point);
+            var point = {'x': new Date(out[i][4]), 'y': out[i][3]};
             dataObj.push(point);
-              //console.log((propt + ': ' + data[propt].time + ':' + data[propt].sound));
           }
+
           var ctd = document.getElementById("dayChart").getContext("2d");
           var data5 = [{
             label: '',
