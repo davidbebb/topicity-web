@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "body-parser": "~1.0.0",
+    "chart.js-scatter": "^1.1.3",
     "cloudant": "^1.4.1",
     "cookie-parser": "~1.0.1",
     "debug": "~0.7.4",

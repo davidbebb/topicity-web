@@ -14,7 +14,7 @@ var me = '9b48e2db-5901-44e5-bd34-de50b4b10c6d-bluemix';
 var key = process.env.cloudant_key;
 var password = process.env.cloudant_password;
 var cloudant = Cloudant({account:me, key:key, password:password});
-var db = cloudant.db.use('test');
+var db = cloudant.db.use('live');
 
 var app = express();
 

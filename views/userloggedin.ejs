@@ -1,0 +1,325 @@
+<!doctype html>
+<!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Oleose App Landing Page | Bootstrap Theme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="shortcut icon" href="favicon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/user.css">
+
+    <link rel="stylesheet" href="js/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/eco.css">
+    <style>
+      #rcorners1 {
+          border-radius: 12px;
+
+      }
+      </style>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="pre-loader">
+        <div class="load-con">
+            <img src="img/eco/logo.png" class="animated fadeInDown" alt="">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+
+        <nav class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="fa fa-bars fa-lg"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img src="img/eco/logo.png" alt="" class="logo">
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#about">My energy</a>
+                            </li>
+                            <li><a href="#reviews">Top up</a>
+                            </li>
+                            <li><a class="getApp" href="/">Log out</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-->
+        </nav>
+
+    </header>
+
+
+    <div class="wrapper">
+
+        <section id="about">
+          <div class="container">
+                <div class="section-heading scrollpoint sp-effect3">
+                    <h1>My electricity</h1>
+                    <h3 id='credit-remain'></h3>
+                </div>
+
+                <div>
+                    <div class="col-md-1 col-sm-1" ></div>
+                    <div class="col-md-10 col-sm-10" >
+
+                      <h2>24hr</h2>
+                      <p>Credits</p>
+                      <canvas id="dayChart" width="1000" height="400"></canvas>
+
+                      <br>
+
+
+                      <h2>Week</h2>
+                      <p class='rotate'>Credits</p>
+                      <canvas id="weekChart" width="1000" height="400"></canvas>
+
+                      <br>
+                      <h2>Year</h2>
+                      <p class='rotate'>Credits</p>
+                      <canvas id="yearChart" width="1000" height="400"></canvas>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1" ></div>
+                </div>
+        </section>
+
+
+        <section id="reviews">
+            <div class="container">
+              <!-- Strip boot strap form borrowd from http://bootsnipp.com/snippets/Qxv3m -->
+              <div class="section-heading inverse scrollpoint sp-effect3">
+                  <h1>Top up</h1>
+                  <div class="divider"></div>
+                  <h2>Current balence: <b>12</b> K</h2>
+              </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="panel panel-default credit-card-box" id="rcorners1">
+                            <div class="panel-heading display-table"  id="rcorners1" >
+                                <div class="row display-tr" >
+                                    <h3 class="panel-title display-td" >Payment Details</h3>
+                                    <div class="display-td" >
+                                        <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" id="payment-form">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="cardNumber">CARD NUMBER</label>
+                                                <div class="input-group">
+                                                    <input
+                                                        type="tel"
+                                                        class="form-control"
+                                                        name="cardNumber"
+                                                        placeholder="Valid Card Number"
+                                                        autocomplete="cc-number"
+                                                        required autofocus
+                                                    />
+                                                    <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-7 col-md-7">
+                                            <div class="form-group">
+                                                <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                                <input
+                                                    type="tel"
+                                                    class="form-control"
+                                                    name="cardExpiry"
+                                                    placeholder="MM / YY"
+                                                    autocomplete="cc-exp"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-5 col-md-5 pull-right">
+                                            <div class="form-group">
+                                                <label for="cardCVC">CV CODE</label>
+                                                <input
+                                                    type="tel"
+                                                    class="form-control"
+                                                    name="cardCVC"
+                                                    placeholder="CVC"
+                                                    autocomplete="cc-csc"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="couponCode">COUPON CODE</label>
+                                                <input type="text" class="form-control" name="couponCode" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button class="btn btn-success btn-lg btn-block" type="submit">Top up now</button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="display:none;">
+                                        <div class="col-xs-12">
+                                            <p class="payment-errors"></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="social">
+                    <a href="#" class="scrollpoint sp-effect3"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="#" class="scrollpoint sp-effect3"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="#" class="scrollpoint sp-effect3"><i class="fa fa-facebook fa-lg"></i></a>
+                </div>
+                <div class="rights">
+                    <p>Copyright &copy; 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/placeholdem.min.js"></script>
+    <script src="js/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script src="js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript" src="js/modernizr.custom.32033.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src='js/Chart.Scatter.js'></script>
+    <script>
+        $(document).ready(function() {
+          appMaster.preLoader();
+
+        });
+    </script>
+    <script>
+      $(document).ready(function() {
+        var ctx = document.getElementById("yearChart").getContext("2d");
+        var data = {
+            labels: [ "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February"],
+            datasets: [
+              {
+                  label: "My First dataset",
+                  fillColor: "rgba(220,220,220,0.5)",
+                  strokeColor: "rgba(220,220,220,0.8)",
+                  highlightFill: "rgba(220,220,220,0.75)",
+                  highlightStroke: "rgba(220,220,220,1)",
+                  data: [1445, 1409, 2130, 2121, 1806, 1405, 1060, 1225, 1706, 1384, 1862, 1908]
+              },
+            ]
+        };
+        var myBarChart = new Chart(ctx).Bar(data);
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+        var ctwk = document.getElementById("weekChart").getContext("2d");
+        var data = {
+            labels: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            datasets: [
+              {
+                  label: "My First dataset",
+                  fillColor: "rgba(220,220,220,0.5)",
+                  strokeColor: "rgba(220,220,220,0.8)",
+                  highlightFill: "rgba(220,220,220,0.75)",
+                  highlightStroke: "rgba(220,220,220,1)",
+                  data: [ 80, 81, 55, 40, 74, 42, 58]
+              },
+            ]
+        };
+        var myBarChart = new Chart(ctwk).Bar(data);
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+        dataUrl = 'api/data/all';
+        $.get( dataUrl, function( out ) {
+          var dataObj = [];
+          l = out.length;
+          for (i = 0; i < l; i++) {
+            console.log(out[0]);
+            var point = {'x': new Date(out[i][4]), 'y': out[i][3]};
+            dataObj.push(point);
+          }
+
+          var ctd = document.getElementById("dayChart").getContext("2d");
+          var data5 = [{
+            label: '',
+            strokeColor: 'rgba(77, 180, 73, 0.3)',
+            xValueType: "dateTime",
+            data: dataObj
+          }];
+          var myBubbleChart = new Chart(ctd).Scatter(data5, {
+              bezierCurve: true,
+              showTooltips: true,
+              scaleShowHorizontalLines: true,
+              scaleShowLabels: true,
+              scaleBeginAtZero: true,
+              scaleType: "date",
+              datasetStroke: true
+          });
+
+          });
+        });
+    </script>
+
+
+</body>
+
+</html>

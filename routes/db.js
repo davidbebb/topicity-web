@@ -3,13 +3,16 @@ var router = express.Router();
 
 
 /* GET Userlist page. */
-router.get('/datapoint', function(req, res) {
+router.get('/data/id/:id', function(req, res) {
     var db = req.db;
-
-    db.list(function(err, body)
+    var idNumber = req.params.id;
+    db.list(function(err, body){
       var dataLength = body.rows.length;
-      console.log(dataLength);
-      id = body.rows[0].id;
+      if (idNumber >= dataLength) {
+        res.send('Not in range');
+        return;
+      };
+      id = body.rows[idNumber].id;
 
       db.get(id, function(err, body) {
         if (!err) {
@@ -21,22 +24,88 @@ router.get('/datapoint', function(req, res) {
 
 });
 
+router.get('/data/all', function(req, res) {
+    var db = req.db;
+      db.list(function(err, body) {
+        if (!err) {
+          var dataArray = [];
+          var gatewayEui =  "1DEE15E85FA7DCEF";
+          var length = body.rows.length;
+          console.log(length);
+          var data = [];
+          body.rows.forEach(function(doc) {
+            var id = doc.id;
+            db.get(id,  function(err, doc) {
+                if (doc.payload.gatewayEui != gatewayEui) {
+                  length = length-1;
+                } else {
+                dataArray.push(doc.payload);
+                }
+                if (dataArray.length === length){
+                  dataArray.sort(dynamicSort("time"));
+                  dataArray.forEach(function(doc){
+                    data.push(processData(doc.data, doc.time));
+                    if (data.length === length){
+                      res.json(data);
+                    };
+                  });
+                };
+            });
+          });
+        };
+      });
+});
+
+function split(data) {
+  var dataArray = [];
+  var timeArray = [];
+  l = data.length;
+  for (i = 0; i < l; i++) {
+    dataArray.push(data[i][0]);
+    timeArray.push(data[i][1]);
+  }
+
+  return [timeArray, dataArray];
+}
+
+
+function dynamicSort(property) {
+    var sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+    return function (a,b) {
+        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+    }
+}
 
 
 function processData(data, endTime) {
   res = dataToArray(data);
-  time = getTimes(endTime, res.length);
-  return [res, time];
+  time =  new Date(endTime);
+  res.push(time)
+  return res;
 };
 
 function dataToArray(data){
   var buf = new Buffer(data, 'base64').toString("ascii");
   var res = buf.split(",");
-  return res;
+  var id = res.shift();
+  var power = res.shift();
+  var credit = res.shift();
+  l = res.length;
+  foo = 0;
+  for(var i = 0; i < l; i++) {
+    foo += parseFloat(res[i]);  // Iterate over your first array and then grab the second element add the values up
+  }
+  bar = foo;
+  return [id, power, credit, bar];
 };
 
 function getTimes(time, number) {
-  var diff = 15;
+  var diff = 0.1;
   endTime = new Date(time);
   timeArray = [endTime];
   for (i = 1; i < number; i++) {
